@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" href="" id="csslink">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 10px;
+            background-color: black;
+        }
+
+        #cssurl {
+            display: flex;
+            justify-content: center;
+        }
+
+        #cssurl input {
+            border: 1px solid black;
+            width: 200px;
+            padding: 5px;
+            outline: none;
+        }
+
+        #cssurl button {
+            background-color: black;
+            border: 1px solid black;
+            color: white;
+            outline: none;
+        }
+
+        #selector-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #selector-list>li {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid white;
+        }
+
+        #selector-list>li>.selector {
+            width: 150px;
+            border: 1px solid black;
+            align-self: flex-start;
+            margin-right: 10px;
+            padding: 5px;
+            background-color: white;
+        }
+
+        #selector-list>li>textarea {
+            width: 300px;
+            height: 200px;
+            outline: none;
+            margin-right: 10px;
+            border: 1px solid black;
+        }
+
+        #selector-list>li>.css-preview {
+            flex: 1;
+            border: 1px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cssurl">
+        <input type="text" value="http://127.0.0.1:698/css/common.css">
+        <button onclick="document.getElementById('csslink').href=this.previousElementSibling.value">确定</button>
+    </div>
+    <ul id="selector-list">
+        <li>
+            <div class="selector">.page-head</div>
+            <textarea oninput="react(this)">
+                <div class="page-head">
+                    <div class="left">
+                        <img src="images/home/order.png">订单预览
+                    </div>
+                </div>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">.theme-bt</div>
+            <textarea oninput="react(this)">
+                <button class="theme-bt">点击</button>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">.theme-bt.invert</div>
+            <textarea oninput="react(this)">
+                <button class="theme-bt invert">点击</button>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">table.common</div>
+            <textarea oninput="react(this)">
+                <table class="common">
+                    <thead>
+                        <tr>
+                            <th>作品ID</th>
+                            <th>排序</th>
+                            <th>作品名称</th>
+                            <th>作品分类</th>
+                            <th>作品图片</th>
+                            <th>价格</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>1</td>
+                            <td>七夕情人节送闺蜜女友 老婆实用个性礼盒设计</td>
+                            <td>***</td>
+                            <td>
+                                <img src="images/demo.jpg">
+                            </td>
+                            <td>
+                                <strong>￥222.00</strong>
+                            </td>
+                            <td>
+                                <button class="theme-bt">上架</button>
+                            </td>
+                            <td>
+                                <button class="simple">复制链接</button>
+                                <button class="simple">复制作品</button>
+                                <button class="simple">编辑</button>
+                                <button class="simple">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>1</td>
+                            <td>七夕情人节送闺蜜女友 老婆实用个性礼盒设计</td>
+                            <td>***</td>
+                            <td>
+                                <img src="images/demo.jpg">
+                            </td>
+                            <td>
+                                <strong>￥222.00</strong>
+                            </td>
+                            <td>
+                                <button class="theme-bt invert">下架</button>
+                            </td>
+                            <td>
+                                <button class="simple">复制链接</button>
+                                <button class="simple">复制作品</button>
+                                <button class="simple">编辑</button>
+                                <button class="simple">删除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>1</td>
+                            <td>七夕情人节送闺蜜女友 老婆实用个性礼盒设计</td>
+                            <td>***</td>
+                            <td>
+                                <img src="images/demo.jpg">
+                            </td>
+                            <td>
+                                <strong>￥222.00</strong>
+                            </td>
+                            <td>
+                                <button class="theme-bt">上架</button>
+                            </td>
+                            <td>
+                                <button class="simple">复制链接</button>
+                                <button class="simple">复制作品</button>
+                                <button class="simple">编辑</button>
+                                <button class="simple">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">table.edit</div>
+            <textarea oninput="react(this)">
+                <table class="edit">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong class="required">*</strong>
+                                作品名称：
+                            </td>
+                            <td>
+                                <input value="99999999999">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>*</strong>
+                                作品名称：
+                            </td>
+                            <td>
+                                <input value="99999999999">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">label.radio</div>
+            <textarea oninput="react(this)">
+                <label class="radio">
+                    <input type="radio" name="open" checked="checked">
+                    <div></div>
+                    <span>是</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="open" checked="checked">
+                    <div></div>
+                    <span>否</span>
+                </label>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">input.focus</div>
+            <textarea oninput="react(this)">
+                <input class="focus" placeholder="名称名称">
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">.simple-bts</div>
+            <textarea oninput="react(this)">
+                <div class="simple-bts">
+                    <button class="simple">编辑</button>
+                    <button class="simple">删除</button>
+                </div>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">div.order-status.red</div>
+            <textarea oninput="react(this)">
+                <div class="order-status red">待发货</div>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">.type-select</div>
+            <textarea oninput="react(this)">
+                <ul class="type-select mb20">
+                    <li class="current">全部</li>
+                    <li>待付款</li>
+                    <li>印刷中</li>
+                    <li>待发货</li>
+                    <li>待收货</li>
+                    <li>已完成</li>
+                </ul>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+        <li>
+            <div class="selector">label.checkbox</div>
+            <textarea oninput="react(this)">
+                <label class="checkbox">
+                    <input type="checkbox" checked="checked">
+                    <div></div>
+                    <span>启用独立佣金比例</span>
+                </label>
+            </textarea>
+            <div class="css-preview"></div>
+        </li>
+    </ul>
+    <script>
+        [].slice.call(document.querySelectorAll("#selector-list li")).forEach(function (item, index) {
+            item.querySelector(".css-preview").innerHTML = item.querySelector("textarea").value;
+        });
+
+        function react(obj) {
+            obj.nextElementSibling.innerHTML = obj.value;
+        }
+        document.getElementById('csslink').href = document.querySelector("#cssurl input").value;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>698后台管理</title>
+    <base href="/" urlbase="http://192.168.1.35:8080" apibase="http://192.168.1.35:8082">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="libs/jquery-3.3.1.min.es"></script>
+    <script src="libs/vue.es"></script>
+    <script src="libs/vue-router.es"></script>
+    <script src="libs/quill.es"></script>
+    <script src="libs/vue-quill-editor.es"></script>
+    <script src="libs/datepicker.min.es"></script>
+    <script src="libs/clockpicker/vue2-clock-picker.min.es"></script>
+    <script src="libs/plupload.full.min.es"></script>
+    <script src="js/app.es"></script>
+    <link rel="icon" href="images/siteicon.png">
+    <link rel="stylesheet" href="css/common.css?v=1.1" charset="UTF-8">
+    <link href="libs/clockpicker/vue2-clock-picker.min.css" rel="stylesheet">
+    <link href="css/quill.core.css" rel="stylesheet">
+    <link href="css/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <v-header v-if="showNav"></v-header>
+        <router-view></router-view>
+        <transition name="fade">
+            <keep-alive>
+                <module :is="alerts.length?'alert':(confirms.length?'confirm':(prompts.length?'prompt':''))"></module>
+            </keep-alive>
+        </transition>
+    </div>
+</body>
+
+</html>
